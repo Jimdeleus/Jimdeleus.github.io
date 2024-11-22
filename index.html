@@ -11,6 +11,7 @@
             background-color: #f0f4f8;
             margin: 0;
             padding: 20px;
+            color: #34495e;
         }
 
         .container {
@@ -25,6 +26,7 @@
         h1 {
             text-align: center;
             color: #2c3e50;
+            margin-bottom: 10px;
         }
 
         .profile-header {
@@ -33,6 +35,10 @@
             border-bottom: 2px solid #ecf0f1;
             padding-bottom: 20px;
             margin-bottom: 20px;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
         }
 
         .profile-header img {
@@ -40,13 +46,66 @@
             width: 150px;
             height: 150px;
             margin-right: 20px;
-            border: 3px solid #007bff;
+            border: 3px solid #fff;
         }
 
-        .bio {
+        .projects-section {
             margin: 20px 0;
-            line-height: 1.6;
-            color: #34495e;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            color: #2980b9;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ecf0f1;
+            border-radius: 10px;
+        }
+
+        .project-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .project-item img {
+            width: 100%;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .project-item .project-title {
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2980b9;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .project-item .project-title:hover {
+            color: #007bff;
+        }
+
+        .skills-section {
+            text-align: center;
+            margin: 20px 0;
         }
 
         .skills {
@@ -66,34 +125,12 @@
             border-radius: 20px;
             margin: 5px;
             font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin: 10px;
-            flex: 1 1 calc(33.333% - 20px); /* Ensure equal size buttons */
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 16px;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            background-color: #0056b3; /* Darker shade on hover */
+        .skills li:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
         footer {
@@ -102,12 +139,12 @@
             color: #777;
         }
 
+        footer p {
+            margin: 10px 0;
+        }
+
         /* Responsive Styles */
         @media (max-width: 600px) {
-            .button {
-                flex: 1 1 100%; /* Ensure full-width buttons on smaller screens */
-            }
-
             .profile-header {
                 flex-direction: column;
                 align-items: center;
@@ -123,6 +160,10 @@
                 justify-content: center;
                 text-align: center;
             }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -133,20 +174,48 @@
         <img src="625caedd-a102-4fb3-8938-ad80bc560c24.jpg" alt="Profile Picture">
         <div>
             <h1>Jimuel De Leus</h1>
-            <p style="color: #7f8c8d;">3rd Year Student | YDiploma in Information Technology</p>
+            <p style="color: #bdc3c7;">3rd Year Student | Diploma in Information Technology</p>
         </div>
     </div>
 
-    <div class="button-container">
-        <button class="button">Project 1</button>
-        <button class="button">Project 2</button>
-        <button class="button">Project 3</button>
-        <button class="button">Project 4</button>
-        <button class="button">Project 5</button>
+    <div class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <a href="project1.html">
+                    <img src="project1-thumbnail.jpg" alt="Project 1">
+                    <div class="project-title">Project 1</div>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="Korea Website/index.html">
+                    <img src="project2-thumbnail.jpg" alt="Project 2">
+                    <div class="project-title">Project 2</div>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="project3.html">
+                    <img src="project3-thumbnail.jpg" alt="Project 3">
+                    <div class="project-title">Project 3</div>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="project4.html">
+                    <img src="project4-thumbnail.jpg" alt="Project 4">
+                    <div class="project-title">Project 4</div>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="project5.html">
+                    <img src="project5-thumbnail.jpg" alt="Project 5">
+                    <div class="project-title">Project 5</div>
+                </a>
+            </div>
+        </div>
     </div>
 
     <div class="skills-section">
-        <h2 style="text-align: center; color: #2980b9;">Skills</h2>
+        <h2>Skills</h2>
         <ul class="skills">
             <li>HTML</li>
             <li>CSS</li>
