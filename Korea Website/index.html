@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Spots in Korea</title>
     <style>
-        /* Basic CSS styling for layout and design */
+        /* Base Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,16 +14,15 @@
         }
 
         header {
-            background-image: url('https://img.freepik.com/premium-photo/sunset-cherry-blossom-park-tower-background-seoul-city-south-korea-this-image-can-use-travel-sakura-holiday-concept_1028938-308989.jpg'); /* Replace with your image URL */
+            background-image: url('https://img.freepik.com/premium-photo/sunset-cherry-blossom-park-tower-background-seoul-city-south-korea-this-image-can-use-travel-sakura-holiday-concept_1028938-308989.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 60px 15px;
+            padding: 200px 20px;
             text-align: center;
             position: relative;
         }
 
-        /* Overlay to darken the background image for better text readability */
         header::before {
             content: "";
             position: absolute;
@@ -31,11 +30,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
 
-        /* Header content */
         header h1, header p {
             position: relative;
             z-index: 2;
@@ -43,12 +41,12 @@
         }
 
         header h1 {
-            font-size: 36px;
+            font-size: clamp(24px, 5vw, 36px); /* Dynamic scaling */
             margin-bottom: 10px;
         }
 
         header p {
-            font-size: 18px;
+            font-size: clamp(14px, 3vw, 18px);
             margin-top: 0;
         }
 
@@ -70,20 +68,29 @@
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
             padding: 20px;
         }
 
         .spot {
             background-color: white;
-            width: 300px;
-            margin: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for zoom */
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit text color */
+            padding: 10px;
+        }
+
+        /* Zoom effect on hover and tap */
+        .spot:hover,
+        .spot:active {
+            transform: scale(1.05); /* Slight zoom effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Elevated shadow */
         }
 
         .spot img {
@@ -101,6 +108,12 @@
         .spot p {
             padding: 0 10px 20px;
             color: #666;
+            transition: transform 0.3s, font-size 0.3s;
+        }
+
+        .zoomed {
+            transform: scale(1.2);
+            font-size: 20px;
         }
 
         footer {
@@ -111,26 +124,25 @@
             margin-top: 20px;
         }
 
-        /* Responsive CSS */
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .spot {
-                width: 90%;
-                margin: 10px 0;
+            nav a {
+                display: block;
+                margin: 10px 0; /* Stack navigation links */
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             header p {
-                font-size: 16px;
+                font-size: 14px;
+            }
+
+            .spot img {
+                height: auto;
             }
         }
     </style>
@@ -150,34 +162,47 @@
     </nav>
 
     <div class="container">
-        <div class="spot" id="gyeongbokgung">
+        <a href="#gyeongbokgung" class="spot" id="gyeongbokgung">
             <img src="https://images.squarespace-cdn.com/content/v1/59d89989bebafb24a356f24c/1567485731176-QR5C8WPPCCWBLGMLO9Y6/DSC_0191.JPG" alt="Gyeongbokgung Palace">
             <h2>Gyeongbokgung Palace</h2>
             <p>Built in 1395, Gyeongbokgung Palace is the main royal palace of the Joseon dynasty. It's one of the most iconic sites in Seoul.</p>
-        </div>
+        </a>
 
-        <div class="spot" id="jeju">
+        <a href="#jeju" class="spot" id="jeju">
             <img src="https://carmensluxurytravel.com/wp-content/uploads/2024/03/AdobeStock_177536059-scaled.jpeg" alt="Jeju Island">
             <h2>Jeju Island</h2>
             <p>Known for its natural beauty, Jeju Island offers stunning beaches, volcanic landscapes, and rich cultural experiences.</p>
-        </div>
+        </a>
 
-        <div class="spot" id="bukchon">
+        <a href="#bukchon" class="spot" id="bukchon">
             <img src="https://blog.trazy.com/wp-content/uploads/2024/07/bukchon-summer-thumbnail.png" alt="Bukchon Hanok Village">
             <h2>Bukchon Hanok Village</h2>
             <p>This traditional village in Seoul features hundreds of hanoks (traditional Korean houses) dating back to the Joseon Dynasty.</p>
-        </div>
+        </a>
 
-        <div class="spot" id="namsan">
+        <a href="#namsan" class="spot" id="namsan">
             <img src="https://www.agoda.com/wp-content/uploads/2024/08/Namsan-Tower-during-autumn-in-Seoul-South-Korea-1244x700.jpg" alt="Namsan Seoul Tower">
             <h2>Namsan Seoul Tower</h2>
             <p>Offering panoramic views of Seoul, the Namsan Seoul Tower is a must-visit for breathtaking cityscapes, especially at night.</p>
-        </div>
+        </a>
     </div>
 
     <footer>
         <p>&copy; 2024 Explore Korea. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Add zoom effect on click
+        const spots = document.querySelectorAll('.spot');
+        
+        spots.forEach(spot => {
+            spot.addEventListener('click', function() {
+                // Toggle the 'zoomed' class on the paragraph inside the spot
+                const description = this.querySelector('p');
+                description.classList.toggle('zoomed');
+            });
+        });
+    </script>
 
 </body>
 </html>
