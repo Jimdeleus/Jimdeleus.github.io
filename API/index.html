@@ -172,48 +172,94 @@
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            const cars = [
-                { 
-                    id: 1, make: "Toyota", model: "Corolla", year: 2020, color: "Red", price: 20000, 
-                    description: "A reliable sedan with excellent fuel efficiency and a comfortable ride.", 
-                    image: "https://di-uploads-pod18.dealerinspire.com/walsertoyota/uploads/2019/04/2020-Corolla-XLE-Red.jpg" 
-                },
-                { 
-                    id: 2, make: "Honda", model: "Civic", year: 2021, color: "Blue", price: 22000, 
-                    description: "A stylish compact car with great handling and advanced technology.", 
-                    image: "https://file.kelleybluebookimages.com/kbb/base/evox/CP/15455/2021-Honda-Civic-front_15455_032_1984x763_BS_cropped.png" 
-                },
-                { 
-                    id: 3, make: "Ford", model: "Focus", year: 2019, color: "Brown", price: 18000, 
-                    description: "A versatile and practical car, perfect for everyday commuting.", 
-                    image: "https://blogmedia.dealerfire.com/wp-content/uploads/sites/275/2018/05/side-view-of-a-tan-Asian-2019-Ford-Focus-Sedan_o.jpg" 
-                },
-                { 
-                    id: 4, make: "Chevrolet", model: "Malibu", year: 2022, color: "Black", price: 25000, 
-                    description: "A spacious and comfortable sedan with modern features and technology.", 
-                    image: "https://inv.assets.ansira.net/ChromeColorMatch/us/TRANSPARENT_cc_2022CHC110008_01_1280_G6M.png" 
-                },
-                { 
-                    id: 5, make: "Nissan", model: "Altima", year: 2020, color: "Black", price: 23000, 
-                    description: "A well-rounded sedan offering comfort, efficiency, and great safety features.", 
-                    image: "https://di-uploads-pod25.dealerinspire.com/planetnissan/uploads/2019/09/Altima-19.png" 
-                },
-                { 
-                    id: 6, make: "Tesla", model: "Model 3", year: 2023, color: "White", price: 35000, 
-                    description: "An electric sedan with cutting-edge technology and impressive performance.", 
-                    image: "https://img.freepik.com/premium-photo/car-isolated-white-background-tesla-model-3-white-car-blank-clean-white-backgr-white-black_655090-607329.jpg" 
-                },
-                { 
-                    id: 7, make: "BMW", model: "3 Series", year: 2021, color: "White", price: 40000, 
-                    description: "A luxury sedan known for its dynamic driving experience and premium feel.", 
-                    image: "https://65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com/ldm-images/2021-BMW-3-Series-hero.png" 
-                },
-                { 
-                    id: 8, make: "Audi", model: "A4", year: 2022, color: "Blue", price: 45000, 
-                    description: "A compact executive car offering superior performance and advanced features.", 
-                    image: "https://cars.usnews.com/static/images/Auto/izmo/i159614796/2022_audi_a4_sedan_angularfront.jpg" 
-                }
-            ];
+         const cars = [
+    { 
+        id: 1, make: "Ferrari", model: "488 GTB", year: 2020, color: "Red", price: 250000, 
+        description: "A high-performance sports car with exceptional handling and speed, perfect for track days and weekend drives.", 
+        image: "https://vehicle-images.dealerinspire.com/91f3-210007648/ZFF90HLA2L0249321/a50cb6d4291dae0209c3aba6532f54f0.jpg" 
+    },
+    { 
+        id: 2, make: "Lamborghini", model: "Huracán", year: 2021, color: "Blue", price: 300000, 
+        description: "An iconic Italian supercar with a naturally aspirated V10 engine, offering jaw-dropping acceleration and a thrilling driving experience.", 
+        image: "https://www.chicagomotorcars.com/imagetag/7709/main/l/Used-2021-Lamborghini-Huracan-EVO-Spyder-Stunning-Blu-Sideris-Paint!-Q-Citura-Stitching!-1635785481.jpg" 
+    },
+    { 
+        id: 3, make: "Porsche", model: "911 Carrera", year: 2019, color: "Black", price: 120000, 
+        description: "A legendary sports car with timeless design and an unmatched blend of luxury, performance, and driving pleasure.", 
+        image: "https://www.chicagomotorcars.com/imagetag/8190/main/l/Used-2019-Porsche-911-Carrera-T-7-Speed-Manual!-Chrono-Package!-PPF!-1618349929.jpg" 
+    },
+    { 
+        id: 4, make: "Chevrolet", model: "Corvette C8", year: 2022, color: "Yellow", price: 70000, 
+        description: "The mid-engine Corvette offers American muscle with the precision of a supercar, combining exceptional value with blistering speed.", 
+        image: "https://www.chicagomotorcars.com/imagetag/9075/main/l/Used-2022-Chevrolet-Corvette-Stingray-C8R-3LT-Convertible-with-Z51!-ONLY-4-Miles!-LOADED!-RARE!-1639436576.jpg" 
+    },
+    { 
+        id: 5, make: "Nissan", model: "GT-R", year: 2020, color: "Black", price: 113000, 
+        description: "A Japanese performance icon known for its raw power, advanced technology, and unbeatable all-wheel drive performance.", 
+        image: "https://cdn.motor1.com/images/mgl/PP0o8/s1/2019-nissan-gt-r-special-edition-jdm.jpg" 
+    },
+    { 
+        id: 6, make: "Tesla", model: "Roadster", year: 2023, color: "White", price: 200000, 
+        description: "An all-electric supercar that blends stunning speed and groundbreaking technology, pushing the limits of performance in the EV world.", 
+        image: "https://www.carscoops.com/wp-content/uploads/2018/09/10a5c0f9-tesla-roadster-white.jpg" 
+    },
+    { 
+        id: 7, make: "BMW", model: "i8", year: 2021, color: "White", price: 140000, 
+        description: "A hybrid supercar that delivers both breathtaking performance and cutting-edge design, making every drive a memorable experience.", 
+        image: "https://imgcdn.zigwheels.ph/large/gallery/color/1/1790/bmw_i8_crystal-white-pearl-bmw-i-blue-metallic.jpg" 
+    },
+    { 
+        id: 8, make: "Audi", model: "R8", year: 2022, color: "Silver", price: 170000, 
+        description: "A sleek and aggressive supercar with a V10 engine and a distinct look that makes every drive feel like a race day.", 
+        image: "https://www.shutterstock.com/image-vector/luxury-premium-realistic-sedan-coupe-600nw-2265920189.jpg" 
+    },
+    { 
+        id: 9, make: "McLaren", model: "720S", year: 2022, color: "Orange", price: 300000, 
+        description: "A British hypercar with blistering acceleration and world-class handling, designed to dominate the road and track.", 
+        image: "https://67cdn.co.uk/137/3/409525/172683255366ed5fa94726f_0s2a8511.jpg?width=479&height=352&crop=auto" 
+    },
+    { 
+        id: 10, make: "Aston Martin", model: "Vantage", year: 2021, color: "Green", price: 139000, 
+        description: "A stunning British sports car known for its elegance, powerful V8 engine, and exhilarating driving dynamics.", 
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHoz2Col-MxfMyi3TfN0g4wZzsqtVUz3NthsXGTfzqZA60DnOTpQslzyqju9Ah0S9c-Dc&usqp=CAU" 
+    },
+    { 
+        id: 11, make: "Jaguar", model: "F-Type", year: 2023, color: "Yellow", price: 60000, 
+        description: "A sophisticated British sports car that combines a thrilling driving experience with a luxurious interior and a stunning design.", 
+        image: "https://img.sm360.ca/ir/w640h390c/images/newcar/ca/2023/jaguar/f-type/r-/coupe/exteriorColors/2023_jaguar_f-type-coupe_r_032_5fs.png" 
+    },
+    { 
+        id: 12, make: "Lexus", model: "LC 500", year: 2021, color: "Purple", price: 100000, 
+        description: "A luxury sports car with impeccable craftsmanship, combining raw power and elegance with a naturally aspirated V8 engine.", 
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdSLB5sNEbtuyCHwVFQt7KmNqPxV_APUokwQ&s" 
+    },
+    { 
+        id: 13, make: "Mazda", model: "MX-5 Miata", year: 2020, color: "Red", price: 26000, 
+        description: "A light and agile roadster with a pure driving experience, offering fun and performance in an affordable package.", 
+        image: "https://imgcdn.oto.com.sg/large/gallery/color/3/36/mazda-mx-5-rf-color-665887.jpg" 
+    },
+    { 
+        id: 14, make: "Subaru", model: "BRZ", year: 2022, color: "Blue", price: 30000, 
+        description: "A compact, rear-wheel-drive sports car that excels in handling, offering an exhilarating driving experience at an affordable price.", 
+        image: "https://di-uploads-pod9.dealerinspire.com/capitolsubaru/uploads/2021/12/2022-brz-sapphire-blue-300x200.jpg" 
+    },
+    { 
+        id: 15, make: "Hyundai", model: "Veloster N", year: 2023, color: "Gray", price: 30000, 
+        description: "A performance hatchback with a turbocharged engine, offering great handling and a sporty design that's perfect for enthusiasts.", 
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTggYjVZ3qQ2lQ8sqdKZzF1hg-UylopNPqt4A&s" 
+    },
+    { 
+        id: 16, make: "Kia", model: "Stinger GT", year: 2022, color: "Red", price: 43000, 
+        description: "A performance sedan with a twin-turbo V6 engine, combining power and luxury with sleek styling and cutting-edge technology.", 
+        image: "https://di-uploads-pod9.dealerinspire.com/capitolkia/uploads/2022/01/2022-kia-stinger-hichroma-red-300x169.jpg" 
+    },
+    { 
+        id: 17, make: "Alfa Romeo", model: "Giulia Quadrifoglio", year: 2021, color: "Silver", price: 80000, 
+        description: "An Italian luxury sports sedan that offers thrilling performance with a turbocharged V6 engine and exceptional handling.", 
+        image: "https://www.giuliaforums.com/attachments/img_3848-jpg.137504/" 
+    }
+];
+
     
             let currentPage = 1;
             const carsPerPage = 4;
