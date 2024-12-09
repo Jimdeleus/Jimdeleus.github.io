@@ -41,7 +41,7 @@
         }
 
         header h1 {
-            font-size: clamp(24px, 5vw, 36px); /* Dynamic scaling */
+            font-size: clamp(24px, 5vw, 36px); 
             margin-bottom: 10px;
         }
 
@@ -69,7 +69,7 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 20px;
             padding: 20px;
         }
@@ -80,17 +80,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for zoom */
-            text-decoration: none; /* Remove underline from links */
-            color: inherit; /* Inherit text color */
+            transition: transform 0.3s, box-shadow 0.3s; 
+            text-decoration: none; 
+            color: inherit; 
             padding: 10px;
         }
 
-        /* Zoom effect on hover and tap */
+        
         .spot:hover,
         .spot:active {
-            transform: scale(1.05); /* Slight zoom effect */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Elevated shadow */
+            transform: scale(1.05); 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
         }
 
         .spot img {
@@ -124,11 +124,11 @@
             margin-top: 20px;
         }
 
-        /* Responsive Styles */
+        
         @media (max-width: 768px) {
             nav a {
                 display: block;
-                margin: 10px 0; /* Stack navigation links */
+                margin: 10px 0; 
             }
         }
 
@@ -192,12 +192,12 @@
     </footer>
 
     <script>
-        // Add zoom effect on click
+        
         const spots = document.querySelectorAll('.spot');
         
         spots.forEach(spot => {
             spot.addEventListener('click', function() {
-                // Toggle the 'zoomed' class on the paragraph inside the spot
+                
                 const description = this.querySelector('p');
                 description.classList.toggle('zoomed');
             });
